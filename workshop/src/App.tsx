@@ -43,6 +43,7 @@ function App() {
       const getCountry = await axios.post('http://192.168.22.145:8000/user/login/', form);
       console.log(getCountry);
       const userCountry = getCountry.data['country'];
+      localStorage.setItem("country", userCountry)
       alert('Login successful!');
       const accessToken = response.data['access'];
       if (accessToken != null){
